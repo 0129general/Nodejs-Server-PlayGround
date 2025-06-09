@@ -1,22 +1,20 @@
-const { server } = require('../Server/server');
-const socketIO = require('socket.io');
+const { server } = require("../Server/server");
+const socketIO = require("socket.io");
 
 const io = socketIO(server, {
-    transports: ["websocket"],
-    pingInterval: 25000,
-    pingTimeout: 60000,
-    cors: {
-        origin: '*', // Or specify Netlify domain
-        methods: ['GET', 'POST', 'PUT']
-    },
-    connectionStateRecovery: {}
+  transports: ["websocket"],
+  pingInterval: 25000,
+  pingTimeout: 60000,
+  cors: {
+    origin: "*", // Or specify Netlify domain
+    methods: ["GET", "POST", "PUT"],
+  },
+  // connectionStateRecovery: {}
 });
 
 module.exports = {
-    io,
+  io,
 };
-
-
 
 //   const io = socketIO(server, {
 //     transports: ['polling'],
@@ -25,8 +23,6 @@ module.exports = {
 //     }
 
 // });
-
-
 
 // // old code delete it later  testing
 
