@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "env-cmd -f ./config-env/dev.env nodemon node index.js",
-    "start": "env-cmd -f ./config-env/prod.env pm2-runtime start ecosystem.config.js --env production",
+    "start": "node index.js",
     "devtest": "env-cmd -f ./config-env/dev.env node index.js",
     "prod": "env-cmd -f ./config-env/prod.env node index.js",
     "test": "NODE_ENV=local jest --watchAll=true --forceExit",

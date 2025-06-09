@@ -127,7 +127,7 @@ app.use((req, res, next) => {
 app.use("/", Routes); // New Path for route
 // app.use(errorHandler); // Error Handler DB2 Connected
 
-server.listen(process.env.PORT || process.env.PORT_NUMBER, () => {
+server.listen(process.env.PORT || process.env.PORT_NUMBER || 3007, () => {
   console.log(
     chalk.yellowBright(`
     ENV file : ${process.env.ENV_FILE_SERVERD}
