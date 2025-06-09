@@ -1,0 +1,52 @@
+{
+  "name": "notification-server-production",
+  "version": "1.0.0",
+  "description": "notification apis",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd -f ./config-env/dev.env nodemon node index.js",
+    "start-heroku": "env-cmd -f ./config-env/prod.env pm2-runtime start ecosystem.config.js --env production",
+    "devtest": "env-cmd -f ./config-env/dev.env node index.js",
+    "prod": "env-cmd -f ./config-env/prod.env node index.js",
+    "test": "NODE_ENV=local jest --watchAll=true --forceExit",
+    "dev-linux": "NODE_ENV=development nodemon node index.js",
+    "prod-linux": "NODE_ENV=production node index.js"
+  },
+  "author": "Syed ikram",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "@socket.io/admin-ui": "^0.5.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.3",
+    "chalk": "^4.1.1",
+    "compression": "^1.7.5",
+    "connect-busboy": "^1.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.21.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-validator": "^7.2.0",
+    "helmet": "^8.0.0",
+    "http": "^0.0.1-security",
+    "jest": "^29.7.0",
+    "mailtrap": "^3.4.0",
+    "moment": "^2.30.1",
+    "mongoose": "^8.8.0",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.16",
+    "path": "^0.12.7",
+    "pm2": "^5.4.2",
+    "redis": "^3.1.2",
+    "socket.io": "^4.8.1",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "supertest": "^7.0.0",
+    "winston": "^3.16.0"
+  }
+}
