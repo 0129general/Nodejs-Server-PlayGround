@@ -128,19 +128,7 @@ app.use("/", Routes); // New Path for route
 // app.use(errorHandler); // Error Handler DB2 Connected
 
 server.listen(process.env.PORT || process.env.PORT_NUMBER || 3007, () => {
-  console.log(
-    chalk.yellowBright(`
-    ENV file : ${process.env.ENV_FILE_SERVERD}
-    APP NAME : ${process.env.APP_NAME}
-    App listening on PORT : ${process.env.PORT || process.env.PORT_NUMBER}
-    HOST : ${process.env.HOST}
-    Redis url 😀 : ${
-      process.env.NODE_ENV === "production"
-        ? process.env.HOSTED_REDIS_URL
-        : process.env.REDIS_URL
-    }
-    `)
-  );
+  console.log("this is node server");
 
   // logger.info(`Server started and running on http://${process.env.HOST}:${config.PORT}
   // `)
